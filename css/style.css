@@ -1,0 +1,79 @@
+body {
+	background-color: black;
+}
+
+h3 {
+	color: white;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+.bestmovie {
+	background: url("https://hdqwalls.com/download/stranger-things-season-3-2019-4k-5k-38-1920x1080.jpg") center / cover no-repeat;
+	height: 60vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+/*
+.bestmovie:hover {
+	height: 70vh;
+	box-shadow: 0px 3px 20px 0px black;
+	transform: scale(1);
+	transition: .5s;
+}*/
+
+.top-bar{
+	text-align: center;
+	padding-right: 500px;
+	/*margin: auto;*/
+}
+
+.menu-bar {
+	border-radius: 25px;
+	height: auto;
+	display: inline-flex;
+	background-color: rgba(0, 0, 0, .4);
+	align-items: center;
+	/*margin: 50px 50px 10px 10px;*/
+	position: fixed;
+}
+
+li {
+	list-style: none;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 12px 16px;
+	margin: 0 8px;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: .5s;
+}
+
+li::before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left:0;
+	height:100%;
+	width: 100%;
+	z-index:-1;
+	border-radius: 25px;
+}
+
+li:hover {
+	color: black;
+	background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+	box-shadow: 0px 3px 20px 0px black;
+	transform: scale(1);
+	transition: .5s;
+	border-radius: 30px;
+}
+
+.image-box {
+	width: 15%;
+	height: 10%;
+	padding-right: 10px;
+}
