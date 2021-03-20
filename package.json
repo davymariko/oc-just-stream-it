@@ -1,0 +1,19 @@
+{
+  "name": "packagesass",
+  "version": "1.0.0",
+  "description": "This will be used for my sass package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davymariko/oc-just-stream-it.git"
+  },
+  "author": "Davy Nimbona",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davymariko/oc-just-stream-it/issues"
+  },
+  "homepage": "https://github.com/davymariko/oc-just-stream-it#readme"
+}

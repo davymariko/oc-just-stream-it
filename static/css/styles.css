@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+
+p {
+    text-align: justify;
+    color: white;
+}
+
+.flottant {
+    float: center;
+    height: 100%;
+}
+
+.container {
+    height: 200px;
+}
