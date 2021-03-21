@@ -4,7 +4,7 @@
   "description": "This will be used for my sass package",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+    "sass": "sass --watch ./static/sass/styles.scss:./static/css/styles.css"
   },
   "repository": {
     "type": "git",
