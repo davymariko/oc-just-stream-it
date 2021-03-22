@@ -26,9 +26,6 @@ html {
 .top-bar {
   text-align: center;
   padding-right: 500px;
-  position: fixed;
-  position: relative;
-  z-index: 1000;
 }
 
 .menu-bar {
@@ -41,8 +38,6 @@ html {
   align-items: center;
   padding: 0 10px;
   position: fixed;
-  position: relative;
-  z-index: 1000;
 }
 .menu-bar li {
   list-style: none;
@@ -51,9 +46,7 @@ html {
   font-weight: bold;
   padding: 12px 16px;
   margin: 0 8px;
-  position: fixed;
   position: relative;
-  z-index: 1000;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -85,25 +78,46 @@ html {
 .section-wraper {
   display: grid;
   grid-template-columns: repeat(2, 100%);
-  padding-left: 2%;
 }
 .section-wraper section {
   width: 100%;
-  height: 200px;
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+}
+.section-wraper section .item {
+  transition: 250ms all;
+}
+.section-wraper section .item .image {
+  border-radius: 10px;
+}
+.section-wraper section .item:hover {
+  margin-left: 0 40px;
+  transform: scale(1.2);
+  border-radius: 50px;
 }
 .section-wraper section a {
   position: absolute;
   color: #fff;
   text-decoration: none;
-  font-size: 6em;
+  font-size: 3em;
+  padding-top: 70px;
   background: black;
+  width: 40px;
+  text-align: center;
+  z-index: 1;
 }
-.section-wraper section:nth-child(1) {
-  background: #77d;
+.section-wraper section a:nth-of-type(1) {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%);
 }
-.section-wraper section:nth-child(2) {
-  background: #6d6d6d;
+.section-wraper section a:nth-of-type(2) {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%);
 }
 
 /*# sourceMappingURL=styles.css.map */
