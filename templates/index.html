@@ -6,29 +6,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}">
 	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+	<script src="../static/js/index.js"></script>
 </head>
 <body>
-	<div class="top-bar">
-		<ul class="menu-bar">
-			<li>Acceuil</li>
-			<li>Catégories</li>
-			<li>Ma liste</li>
-		</ul>
-	</div>
-    <div class="bestmovie">
-		<div class="movie-info">
-			<p>Genre</p><br>
-			<h3>Movie Name</h3><br>
-			<h2>Lecture Button and Infos</h2><br>
+	<div class="container">
+		<div class="top-bar">
+			<ul class="menu-bar">
+				<li>Acceuil</li>
+				<li>Catégories</li>
+				<li>Ma liste</li>
+			</ul>
 		</div>
-    </div>
-	
-	<div class="category">
-		<h3>Les films les mieux notés</h3>
-		<div class="section-wraper">
-			<section id="section001">
-				<a href="#section002">‹</a>
-
+		<div class="bestmovie">
+			<div class="movie-info">
+				<p>Genre</p><br>
+				<h3>Movie Name</h3><br>
+				<h2>Lecture Button and Infos</h2><br>
+			</div>
+		</div>
+		
+		<div class="category">
+			<h3>Les films les mieux notés</h3>
+			<div class="wraper">
 				<div class="item">
 					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXW5mU6SJVtUUV5JgU_e9C6H5PmMaWYKFmBPmYZKyZxXVRpvczfT7s22Es1LWWCELL5g8Lh1Dbouhi_XKOMOgRkelLJUVG-2RWy0kCJugs25yAzRsKwU-yFsgwPH.jpg?r=4b7" alt="Movie"/>
 				</div>
@@ -41,36 +40,12 @@
 				<div class="item">
 					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdp6T-S8TFfiSFmrt9L9JSIBuWK8YWKvOmDhfDZCk2u0FbmVuoG4a43wXgJSF5QtzohKal3oLITjcNtDbba2RznZSqCsUICx1owbgjDSuYJCw0HHMIs0f75LqTTL.jpg?r=40f" alt="Movie"/>
 				</div>
-
-				<a href="#section002">›</a>
-			</section>
-			<section id="section002">
-				<a href="#section001">‹</a>
-
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXW5mU6SJVtUUV5JgU_e9C6H5PmMaWYKFmBPmYZKyZxXVRpvczfT7s22Es1LWWCELL5g8Lh1Dbouhi_XKOMOgRkelLJUVG-2RWy0kCJugs25yAzRsKwU-yFsgwPH.jpg?r=4b7" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU1VQb7FcU_FlVrpRV1oWAEY-iRmiRCZn7QzEg7TwzONN-BukTYsOYT1EoUUsWJQe44eoBZKHdZP2-KCSUqwBs9dgHcocLE7ZAQTxSN5FVH52bpMb5ggso0hLckJ.jpg?r=87c" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcVaEC6_zjIvd0RIlABwFpfgkr7ixsLgtYNg5eIQ-xGXdFfHojngyT4wuSIEIZz0Re7o4O_eU9XTc3l5zlK3zsbs_SqrHzvdxGw4OAKdtzA7r3HQptJ4GSGJZI5X.jpg?r=331" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdp6T-S8TFfiSFmrt9L9JSIBuWK8YWKvOmDhfDZCk2u0FbmVuoG4a43wXgJSF5QtzohKal3oLITjcNtDbba2RznZSqCsUICx1owbgjDSuYJCw0HHMIs0f75LqTTL.jpg?r=40f" alt="Movie"/>
-				</div>
-
-				<a href="#section001">›</a>
-			</section>
+			</div>
 		</div>
-	</div>
 
-	<div class="category">
-		<h3>Action</h3>
-		<div class="section-wraper">
-			<section id="section011">
-				<a href="#section012">‹</a>
-				
+		<div class="category">
+			<h3>Action</h3>
+			<div class="wraper">
 				<div class="item">
 					<img src="https://m.media-amazon.com/images/M/MV5BNjA5Y2ZhYzctNDc1Yy00OGViLWI3NGUtOTYwZmE3NDFiYmIxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_UY268_CR72,0,182,268_AL_.jpg" class="image" alt="Movie"/>
 				</div>
@@ -92,36 +67,12 @@
 				<div class="item">
 					<img src="https://m.media-amazon.com/images/M/MV5BMDJkZjIyMTgtYjdlOC00MDY2LTg5MzQtNzc4MmFmMzJjNjRiXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_UX182_CR0,0,182,268_AL_.jpg" class="image" alt="Movie"/>
 				</div>
-
-				<a href="#section012">›</a>
-			</section>
-			<section id="section012">
-				<a href="#section011">‹</a>
-
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXW5mU6SJVtUUV5JgU_e9C6H5PmMaWYKFmBPmYZKyZxXVRpvczfT7s22Es1LWWCELL5g8Lh1Dbouhi_XKOMOgRkelLJUVG-2RWy0kCJugs25yAzRsKwU-yFsgwPH.jpg?r=4b7" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU1VQb7FcU_FlVrpRV1oWAEY-iRmiRCZn7QzEg7TwzONN-BukTYsOYT1EoUUsWJQe44eoBZKHdZP2-KCSUqwBs9dgHcocLE7ZAQTxSN5FVH52bpMb5ggso0hLckJ.jpg?r=87c" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcVaEC6_zjIvd0RIlABwFpfgkr7ixsLgtYNg5eIQ-xGXdFfHojngyT4wuSIEIZz0Re7o4O_eU9XTc3l5zlK3zsbs_SqrHzvdxGw4OAKdtzA7r3HQptJ4GSGJZI5X.jpg?r=331" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdp6T-S8TFfiSFmrt9L9JSIBuWK8YWKvOmDhfDZCk2u0FbmVuoG4a43wXgJSF5QtzohKal3oLITjcNtDbba2RznZSqCsUICx1owbgjDSuYJCw0HHMIs0f75LqTTL.jpg?r=40f" alt="Movie"/>
-				</div>
-
-				<a href="#section011">›</a>
-			</section>
+			</div>
 		</div>
-	</div>
 
-	<div class="category">
-		<h3>Comédie</h3>
-		<div class="section-wraper">
-			<section id="section021">
-				<a href="#section022">‹</a>
-				
+		<div class="category">
+			<h3>Comédie</h3>
+			<div class="wraper">
 				<div class="item">
 					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXW5mU6SJVtUUV5JgU_e9C6H5PmMaWYKFmBPmYZKyZxXVRpvczfT7s22Es1LWWCELL5g8Lh1Dbouhi_XKOMOgRkelLJUVG-2RWy0kCJugs25yAzRsKwU-yFsgwPH.jpg?r=4b7" alt="Movie"/>
 				</div>
@@ -134,36 +85,12 @@
 				<div class="item">
 					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdp6T-S8TFfiSFmrt9L9JSIBuWK8YWKvOmDhfDZCk2u0FbmVuoG4a43wXgJSF5QtzohKal3oLITjcNtDbba2RznZSqCsUICx1owbgjDSuYJCw0HHMIs0f75LqTTL.jpg?r=40f" alt="Movie"/>
 				</div>
-
-				<a href="#section022">›</a>
-			</section>
-			<section id="section022">
-				<a href="#section021">‹</a>
-
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXW5mU6SJVtUUV5JgU_e9C6H5PmMaWYKFmBPmYZKyZxXVRpvczfT7s22Es1LWWCELL5g8Lh1Dbouhi_XKOMOgRkelLJUVG-2RWy0kCJugs25yAzRsKwU-yFsgwPH.jpg?r=4b7" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU1VQb7FcU_FlVrpRV1oWAEY-iRmiRCZn7QzEg7TwzONN-BukTYsOYT1EoUUsWJQe44eoBZKHdZP2-KCSUqwBs9dgHcocLE7ZAQTxSN5FVH52bpMb5ggso0hLckJ.jpg?r=87c" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcVaEC6_zjIvd0RIlABwFpfgkr7ixsLgtYNg5eIQ-xGXdFfHojngyT4wuSIEIZz0Re7o4O_eU9XTc3l5zlK3zsbs_SqrHzvdxGw4OAKdtzA7r3HQptJ4GSGJZI5X.jpg?r=331" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdp6T-S8TFfiSFmrt9L9JSIBuWK8YWKvOmDhfDZCk2u0FbmVuoG4a43wXgJSF5QtzohKal3oLITjcNtDbba2RznZSqCsUICx1owbgjDSuYJCw0HHMIs0f75LqTTL.jpg?r=40f" alt="Movie"/>
-				</div>
-
-				<a href="#section021">›</a>
-			</section>
+			</div>
 		</div>
-	</div>
 
-	<div class="category">
-		<h3>Drame</h3>
-		<div class="section-wraper">
-			<section id="section031">
-				<a href="#section032">‹</a>
-				
+		<div class="category">
+			<h3>Drame</h3>
+			<div class="wraper">			
 				<div class="item">
 					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXW5mU6SJVtUUV5JgU_e9C6H5PmMaWYKFmBPmYZKyZxXVRpvczfT7s22Es1LWWCELL5g8Lh1Dbouhi_XKOMOgRkelLJUVG-2RWy0kCJugs25yAzRsKwU-yFsgwPH.jpg?r=4b7" alt="Movie"/>
 				</div>
@@ -176,28 +103,10 @@
 				<div class="item">
 					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdp6T-S8TFfiSFmrt9L9JSIBuWK8YWKvOmDhfDZCk2u0FbmVuoG4a43wXgJSF5QtzohKal3oLITjcNtDbba2RznZSqCsUICx1owbgjDSuYJCw0HHMIs0f75LqTTL.jpg?r=40f" alt="Movie"/>
 				</div>
-
-				<a href="#section032">›</a>
-			</section>
-			<section id="section032">
-				<a href="#section031">‹</a>
-
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXW5mU6SJVtUUV5JgU_e9C6H5PmMaWYKFmBPmYZKyZxXVRpvczfT7s22Es1LWWCELL5g8Lh1Dbouhi_XKOMOgRkelLJUVG-2RWy0kCJugs25yAzRsKwU-yFsgwPH.jpg?r=4b7" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU1VQb7FcU_FlVrpRV1oWAEY-iRmiRCZn7QzEg7TwzONN-BukTYsOYT1EoUUsWJQe44eoBZKHdZP2-KCSUqwBs9dgHcocLE7ZAQTxSN5FVH52bpMb5ggso0hLckJ.jpg?r=87c" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcVaEC6_zjIvd0RIlABwFpfgkr7ixsLgtYNg5eIQ-xGXdFfHojngyT4wuSIEIZz0Re7o4O_eU9XTc3l5zlK3zsbs_SqrHzvdxGw4OAKdtzA7r3HQptJ4GSGJZI5X.jpg?r=331" alt="Movie"/>
-				</div>
-				<div class="item">
-					<img src="https://occ-0-4164-769.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdp6T-S8TFfiSFmrt9L9JSIBuWK8YWKvOmDhfDZCk2u0FbmVuoG4a43wXgJSF5QtzohKal3oLITjcNtDbba2RznZSqCsUICx1owbgjDSuYJCw0HHMIs0f75LqTTL.jpg?r=40f" alt="Movie"/>
-				</div>
-
-				<a href="#section031">›</a>
-			</section>
+			</div>
 		</div>
+
+		<div id="test"></div>
 	</div>
 </body>
 </html>

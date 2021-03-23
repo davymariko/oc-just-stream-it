@@ -75,49 +75,28 @@ html {
   padding-left: 2%;
 }
 
-.section-wraper {
+.wraper {
   display: grid;
-  grid-template-columns: repeat(2, 100%);
-}
-.section-wraper section {
   width: 100%;
   position: relative;
-  display: grid;
   grid-template-columns: repeat(7, auto);
 }
-.section-wraper section .item {
+.wraper .item {
   transition: 250ms all;
 }
-.section-wraper section .item .image {
+.wraper .item .image {
   border-radius: 10px;
 }
-.section-wraper section .item:hover {
-  margin-left: 0 40px;
+.wraper .item:hover {
   transform: scale(1.2);
   border-radius: 50px;
 }
-.section-wraper section a {
-  position: absolute;
-  color: #fff;
-  text-decoration: none;
-  font-size: 3em;
-  padding-top: 70px;
-  background: black;
-  width: 40px;
-  text-align: center;
-  z-index: 1;
+.wraper .item:hover .image:nth-of-type(1) {
+  margin-left: 10px;
 }
-.section-wraper section a:nth-of-type(1) {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%);
-}
-.section-wraper section a:nth-of-type(2) {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%);
+
+#test {
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

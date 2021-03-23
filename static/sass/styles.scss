@@ -81,49 +81,31 @@ html {
   }
 }
 
-.section-wraper {
+.wraper {
   display: grid;
-  grid-template-columns: repeat(2, 100%);
+  width: 100%;
+  position: relative;
+  grid-template-columns: repeat(7, auto);
 
-  section {
-    width: 100%;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(7, auto);
+  .item {
+    transition: $duration all;
 
-    .item {
-      transition: $duration all;
-
-      .image {
-        border-radius: 10px;
-      }
-
-      &:hover {
-        margin-left: 0 40px;
-        transform: scale(1.2);
-        border-radius: 50px;
-      }
+    .image {
+      border-radius: 10px;
     }
 
-    a {
-      position: absolute;
-      color: #fff;
-      text-decoration: none;
-      font-size: 3em;
-      padding-top: 70px;
-      background: rgb(0, 0, 0);
-      width: 40px;
-      text-align: center;
-      z-index: 1;
-
-      &:nth-of-type(1) {
-        top: 0; bottom: 0; left: 0;
-        background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 50%);
-      }
-      &:nth-of-type(2) {
-        top: 0; bottom: 0; right: 0;
-        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%);
+    &:hover {
+      transform: scale(1.2);
+      border-radius: 50px;
+      .image {
+        &:nth-of-type(1){
+          margin-left: 10px;
+        }
       }
     }
   }
+}
+
+#test {
+  color: white;
 }
