@@ -3,25 +3,43 @@ function getData(url) {
     myRequest.open("GET", url, true);
     myRequest.onload = function() {
         var results = JSON.parse(myRequest.responseText);
-        console.log(results.results);
-        renderHtml();
+        console.log(results.content);
+        renderHtml(results);
+        console.log(typeof result);
     }
     myRequest.send();
 }
 
 function getAllData(){
     var check = 1;
-    var url = "http://127.0.0.1:8000/api/v1/titles/?page=";
+    var moviesArray = [];
+    var url = "http://127.0.0.1:8000/api/v1/titles/";
     var newUrl = ""
     while (check < 5) {
-		var newUrl = url + (check + 1).toString();
-        getData(newUrl);
+        var tempArray = [];
+        if (check === 1) {
+            tempArray = getData(url);
+        }
+        else {
+            var newUrl = url + "?page=" + (check ).toString();
+            tempArray = getData(newUrl);
+        }
+        for (movie in tempArray) {
+            moviesArray.push(movie);
+        }
+        check++;
+        console.log(moviesArray.length);
+        console.log(moviesArray);
 	}
+    console.log("End");
 }
 
-function renderHtml() {
+function renderHtml(content) {
     var testid = document.getElementById("test");
-    var htmlString = "<p>This is a test</p><br><p>This is a test 2</p>";
+    var htmlString = "<p>" + content.toString() + "</p>";
     testid.insertAdjacentHTML("beforeend", htmlString);
 }
-getData("http://127.0.0.1:8000/api/v1/titles/");
+// getData("http://127.0.0.1:8000/api/v1/titles/");
+
+getAllData();
+
