@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}">
 	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
 	<script src="../static/js/fetch.js"></script>
-	<script src="../static/js/handle.js"></script>
 </head>
 <body>
 	<div class="top-bar">
@@ -27,29 +26,49 @@
 	
 	<div class="category">
 		<h3>Les films les mieux notés</h3>
-		<div class="wraper" id="highrate">
-			
+		<div class="wrapper">
+			<div class="wrapperbox" id="highrate">
+
+			</div>
+
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
 		</div>
 	</div>
 
 	<div class="category">
 		<h3>Action</h3>
-		<div class="wraper" id="action">
+		<div class="wrapper">
+			<div class="wrapperbox" id="action">
 
+			</div>
+
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
 		</div>
 	</div>
 
 	<div class="category">
 		<h3>Comédie</h3>
-		<div class="wraper" id="comedy">
+		<div class="wrapper">
+			<div class="wrapperbox" id="comedy">
 
+			</div>
+
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
 		</div>
 	</div>
 
 	<div class="category">
 		<h3>Drame</h3>
-		<div class="wraper" id="drama">
+		<div class="wrapper">
+			<div class="wrapperbox" id="drama">
 
+			</div>
+
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
 		</div>
 	</div>
 

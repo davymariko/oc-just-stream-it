@@ -1,4 +1,5 @@
 var genres = ["Action", "Comedy", "Drama"];
+var index = 0;
 
 function getAllData(){
     let url = "http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score";
@@ -56,7 +57,8 @@ let  renderHtml =  (result, genreid) => {
 
     result.then(data => {
         for (let k = 0; k < data.results.length; k++) {
-            htmlString += `<div class="item"><img src="${data.results[k].image_url}" alt="Movie"/></div>`
+            htmlString += `<div class="item"><img class="img-${index}" src="${data.results[k].image_url}" alt="Movie"/></div>`;
+            index;
         }
         if (genreid === 0 || genreid === 1) {
             const bestmovie = document.getElementById("bestomvie");
@@ -80,3 +82,38 @@ let  renderHtml =  (result, genreid) => {
 }
 
 getAllData();
+
+
+const sliders = document.querySelector(".wrapperbox");
+var scrollPerClick;
+var ImagePadding = 20;
+
+// Scroll Functionality
+var scrollAmount = 0;
+
+function sliderScrollLeft() {
+  sliders.scrollTo({
+    top: 0,
+    left: (scrollAmount -= scrollPerClick),
+    behavior: "smooth",
+  });
+
+  if (scrollAmount < 0) {
+    scrollAmount = 0;
+  }
+
+  console.log("Scroll Amount: ", scrollAmount);
+}
+
+function sliderScrollRight() {
+  if (scrollAmount <= sliders.scrollWidth - sliders.clientWidth) {
+    sliders.scrollTo({
+      top: 0,
+      left: (scrollAmount += scrollPerClick),
+      behavior: "smooth",
+    });
+  }
+  console.log("Scroll Amount: ", scrollAmount);
+}
+
+scrollPerClick = document.querySelector(".img-1").clientWidth + 20;
