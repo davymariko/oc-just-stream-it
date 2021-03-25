@@ -3,6 +3,7 @@ $duration: 250ms;
 
 body {
   background-color: #000;
+  height: 100vh;
 }
 
 html {
@@ -85,7 +86,7 @@ html {
   display: grid;
   width: 100%;
   position: relative;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(4, auto);
 
   .item {
     transition: $duration all;

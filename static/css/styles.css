@@ -1,5 +1,6 @@
 body {
   background-color: #000;
+  height: 100vh;
 }
 
 html {
@@ -79,7 +80,7 @@ html {
   display: grid;
   width: 100%;
   position: relative;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(4, auto);
 }
 .wraper .item {
   transition: 250ms all;
