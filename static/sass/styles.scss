@@ -30,7 +30,7 @@ html {
     font-size: small;
     color: white;
     display: inline;
-    position: relative;
+    position: absolute;
     left: 0;
     top: 0;
   }
@@ -94,32 +94,43 @@ html {
 
 .wrapper {
   height: 250px;
-  width: 80%;
+  width: 95%;
   position: relative;
 
   .switchLeft,
   .switchRight {
     color: white;
     font-weight: bold;
-    height: 100%;
     width: 45px;
     line-height: 250px;
     font-size: 25px;
     text-align: center;
-    background-color: lightgreen;
     font-family: sans-serif;
     top: 0;
     z-index: 3;
+    transition: $duration all;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   .switchLeft {
     position: absolute;
-    left: -50px;
+    left: -10px;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    &:hover {
+      background: linear-gradient(-90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 1) 100%);
+    }
   }
 
   .switchRight {
     position: absolute;
-    right: -50px;
+    right: -10px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    &:hover {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 1) 100%);
+    }
   }
 
   .wrapperbox {
@@ -132,13 +143,14 @@ html {
     padding-bottom: 10px !important;
     display: flex;
     align-items: center;
+    right: 0;
     
     img {
       min-width: 147px;
       max-width: 147px;
       height: 200px;
+      width: 70%;
       background-size: cover;
-      background-color: lightgreen;
       margin: 5px 10px;
       cursor: pointer;
       transition: 0.5s ease;
@@ -195,4 +207,9 @@ html {
       transition: $duration all;
     }
   }
+}
+
+
+.this {
+  width: 50%;
 }

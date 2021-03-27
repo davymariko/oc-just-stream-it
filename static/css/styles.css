@@ -22,7 +22,7 @@ html {
   font-size: small;
   color: white;
   display: inline;
-  position: relative;
+  position: absolute;
   left: 0;
   top: 0;
 }
@@ -84,30 +84,42 @@ html {
 
 .wrapper {
   height: 250px;
-  width: 80%;
+  width: 95%;
   position: relative;
 }
 .wrapper .switchLeft,
 .wrapper .switchRight {
   color: white;
   font-weight: bold;
-  height: 100%;
   width: 45px;
   line-height: 250px;
   font-size: 25px;
   text-align: center;
-  background-color: lightgreen;
   font-family: sans-serif;
   top: 0;
   z-index: 3;
+  transition: 250ms all;
+  cursor: pointer;
+}
+.wrapper .switchLeft:hover,
+.wrapper .switchRight:hover {
+  transform: scale(1.2);
 }
 .wrapper .switchLeft {
   position: absolute;
-  left: -50px;
+  left: -10px;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+}
+.wrapper .switchLeft:hover {
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.4) 0%, black 100%);
 }
 .wrapper .switchRight {
   position: absolute;
-  right: -50px;
+  right: -10px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+}
+.wrapper .switchRight:hover {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, black 100%);
 }
 .wrapper .wrapperbox {
   height: 250px;
@@ -119,13 +131,14 @@ html {
   padding-bottom: 10px !important;
   display: flex;
   align-items: center;
+  right: 0;
 }
 .wrapper .wrapperbox img {
   min-width: 147px;
   max-width: 147px;
   height: 200px;
+  width: 70%;
   background-size: cover;
-  background-color: lightgreen;
   margin: 5px 10px;
   cursor: pointer;
   transition: 0.5s ease;
@@ -175,6 +188,10 @@ html {
   color: red;
   transform: scale(1.2);
   transition: 250ms all;
+}
+
+.this {
+  width: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */

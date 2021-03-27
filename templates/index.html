@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}">
 	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
-	<script src="../static/js/fetch.js"></script>
 </head>
 <body>
 	<div class="top-bar">
@@ -16,60 +15,59 @@
 			<li>Ma liste</li>
 		</ul>
 	</div>
-	<div class="bestmovie">
-		<img src="https://m.media-amazon.com/images/M/MV5BMWFhZDhkYzMtYjM3NC00OTAxLThhNTEtNmM3OGFjODE0OWU3XkEyXkFqcGdeQXVyMTE5NjAxMDQx._V1_UY268_CR73,0,182,268_AL_.jpg">
-		<div class="movie-info">
-			<p>Genre</p><br>
-			<h3>Movie Name</h3><br>
-			<h2>Lecture Button and Infos</h2><br>
+	<div class="bestmovie" id="bestmovie">
+		<div class="movie-info" id="top-movie-info">
 		</div>
 	</div>
 	
 	<div class="category">
 		<h3>Les films les mieux notés</h3>
 		<div class="wrapper">
-			<div class="wrapperbox" id="highrate">
+			<div class="wrapperbox box-top" id="highrate">
 
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeftTop()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRightTop()">></a>
 		</div>
 	</div>
 
 	<div class="category">
 		<h3>Action</h3>
 		<div class="wrapper">
-			<div class="wrapperbox" id="action">
+			<div class="wrapperbox box-action" id="action">
 
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeftAction()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRightAction()">></a>
 		</div>
 	</div>
 
 	<div class="category">
 		<h3>Comédie</h3>
 		<div class="wrapper">
-			<div class="wrapperbox" id="comedy">
+			<div class="wrapperbox box-comedy" id="comedy">
 
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeftComedy()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRightComedy()">></a>
 		</div>
 	</div>
 
 	<div class="category">
 		<h3>Drame</h3>
 		<div class="wrapper">
-			<div class="wrapperbox" id="drama">
+			<div class="wrapperbox box-drama" id="drama">
 
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight()">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeftDrama()"><</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRightDrama()">></a>
+		</div>
+		<div class="this">
+
 		</div>
 	</div>
 
@@ -80,5 +78,7 @@
 			<img src="https://m.media-amazon.com/images/M/MV5BMDQ1MDQ2NWYtYzVjMC00ZjBiLWEwYjktNzNkYmU3MjgyMzkzL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Movie">
 		</div>
 	</div> -->
+	
+	<script type="text/javascript" src="../static/js/fetch.js"></script>
 </body>
 </html>
