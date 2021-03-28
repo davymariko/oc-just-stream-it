@@ -107,120 +107,38 @@ getAllData();
 getmoviedata(499549);
 
 
-function sliderScrollLeftTop() {
-  sliderstop.scrollTo({
+var scrollPerClick = 100;
+// Scroll Functionality
+var scrollAmount = {
+  ".box-top" : 0,
+  ".box-action" : 0,
+  ".box-comedy" : 0,
+  ".box-drama" : 0
+};
+
+function sliderScrollLeft(genre) {
+  let sliders = document.querySelector(genre);
+  sliders.scrollTo({
     top: 0,
-    left: (scrollAmountTop -= scrollPerClick),
+    left: (scrollAmount[genre] -= scrollPerClick),
     behavior: "smooth",
   });
 
-  if (scrollAmountTop < 0) {
-    scrollAmountTop = 0;
+  if (scrollAmount < 0) {
+    scrollAmount[genre] = 0;
   }
 
-  console.log("Scroll Amount: ", scrollAmountTop);
+  console.log("Scroll Amount: ", scrollAmount[genre]);
 }
 
-function sliderScrollRightTop() {
-  if (scrollAmountTop <= sliderstop.scrollWidth - sliderstop.clientWidth) {
-    sliderstop.scrollTo({
+function sliderScrollRight(genre) {
+  let sliders = document.querySelector(genre);
+  if (scrollAmount[genre] <= sliders.scrollWidth - sliders.clientWidth) {
+    sliders.scrollTo({
       top: 0,
-      left: (scrollAmountTop += scrollPerClick),
+      left: (scrollAmount[genre] += scrollPerClick),
       behavior: "smooth",
     });
   }
-  console.log("Scroll Amount: ", scrollAmountTop);
+  console.log("Scroll Amount: ", scrollAmount[genre]);
 }
-
-
-function sliderScrollLeftAction() {
-    slidersaction.scrollTo({
-      top: 0,
-      left: (scrollAmountAction -= scrollPerClick),
-      behavior: "smooth",
-    });
-  
-    if (scrollAmountAction < 0) {
-      scrollAmountAction = 0;
-    }
-  
-    console.log("Scroll Amount: ", scrollAmountAction);
-}
-
-function sliderScrollRightAction() {
-    if (scrollAmountAction <= slidersaction.scrollWidth - slidersaction.clientWidth) {
-      slidersaction.scrollTo({
-        top: 0,
-        left: (scrollAmountAction += scrollPerClick),
-        behavior: "smooth",
-      });
-    }
-    console.log("Scroll Amount: ", scrollAmountAction);
-}
-
-
-function sliderScrollLeftComedy() {
-    sliderscomedy.scrollTo({
-      top: 0,
-      left: (scrollAmountComedy -= scrollPerClick),
-      behavior: "smooth",
-    });
-  
-    if (scrollAmountComedy < 0) {
-      scrollAmountComedy = 0;
-    }
-  
-    console.log("Scroll Amount: ", scrollAmountComedy);
-}
-
-function sliderScrollRightComedy() {
-    if (scrollAmountComedy <= sliderscomedy.scrollWidth - sliderscomedy.clientWidth) {
-      sliderscomedy.scrollTo({
-        top: 0,
-        left: (scrollAmountComedy += scrollPerClick),
-        behavior: "smooth",
-      });
-    }
-    console.log("Scroll Amount: ", scrollAmountComedy);
-}
-
-
-function sliderScrollLeftDrama() {
-    slidersdrama.scrollTo({
-      top: 0,
-      left: (scrollAmountDrama -= scrollPerClick),
-      behavior: "smooth",
-    });
-  
-    if (scrollAmountDrama < 0) {
-      scrollAmountDrama = 0;
-    }
-  
-    console.log("Scroll Amount: ", scrollAmountDrama);
-}
-
-function sliderScrollRightDrama() {
-    if (scrollAmountDrama <= slidersdrama.scrollWidth - slidersdrama.clientWidth) {
-      slidersdrama.scrollTo({
-        top: 0,
-        left: (scrollAmountDrama += scrollPerClick),
-        behavior: "smooth",
-      });
-    }
-    console.log("Scroll Amount: ", scrollAmountDrama);
-}
-
-
-scrollPerClick = 100;
-const sliderstop = document.querySelector(".box-top");
-const slidersaction = document.querySelector(".box-action");
-const sliderscomedy = document.querySelector(".box-comedy");
-const slidersdrama = document.querySelector(".box-drama");
-var scrollPerClick;
-var ImagePadding = 20;
-
-// Scroll Functionality
-var scrollAmountTop = 0;
-var scrollAmountAction = 0;
-var scrollAmountComedy = 0;
-var scrollAmountDrama = 0;
