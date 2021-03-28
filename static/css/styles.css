@@ -104,6 +104,7 @@ html {
 .wrapper .switchLeft:hover,
 .wrapper .switchRight:hover {
   transform: scale(1.2);
+  transition: 250ms all;
 }
 .wrapper .switchLeft {
   position: absolute;
@@ -126,7 +127,6 @@ html {
   width: auto;
   overflow: hidden;
   white-space: nowrap;
-  display: inline-block;
   text-align: center;
   padding-bottom: 10px !important;
   display: flex;
@@ -134,12 +134,11 @@ html {
   right: 0;
 }
 .wrapper .wrapperbox img {
-  min-width: 147px;
-  max-width: 147px;
   height: 200px;
-  width: 70%;
+  width: 200px;
+  display: inline-block;
   background-size: cover;
-  margin: 5px 10px;
+  margin: 5px 80px;
   cursor: pointer;
   transition: 0.5s ease;
   z-index: 2;

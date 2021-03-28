@@ -29,3 +29,5 @@ function sliderScrollRight() {
   }
   console.log("Scroll Amount: ", scrollAmount);
 }
+
+scrollPerClick = document.querySelector(".img-1").clientWidth + 20;
