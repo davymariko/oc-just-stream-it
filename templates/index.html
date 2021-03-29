@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <title>Just Stream It</title>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
 </head>
 <body>
@@ -24,11 +24,10 @@
 		<h3>Les films les mieux notés</h3>
 		<div class="wrapper">
 			<div class="wrapperbox box-top" id="highrate">
-
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-top')"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-top')">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-top')">‹</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-top')">›</a>
 		</div>
 	</div>
 
@@ -39,8 +38,8 @@
 
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-action')"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-action')">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-action')">‹</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-action')">›</a>
 		</div>
 	</div>
 
@@ -51,8 +50,8 @@
 
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-comedy')"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-comedy')">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-comedy')">‹</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-comedy')">›</a>
 		</div>
 	</div>
 
@@ -60,22 +59,22 @@
 		<h3>Drame</h3>
 		<div class="wrapper">
 			<div class="wrapperbox box-drama" id="drama">
-
 			</div>
 
-			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-drama')"><</a>
-			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-drama')">></a>
+			<a class="switchLeft sliderButton" onclick="sliderScrollLeft('.box-drama')">‹</a>
+			<a class="switchRight sliderButton" onclick="sliderScrollRight('.box-drama')">›</a>
 		</div>
 	</div>
 
-	<div id="test"></div>
-	<!-- <div class="bg-modal">
-		<div class="modal-content">
-			<div class="close">x</div>
-			<img src="https://m.media-amazon.com/images/M/MV5BMDQ1MDQ2NWYtYzVjMC00ZjBiLWEwYjktNzNkYmU3MjgyMzkzL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Movie">
+	<a href="#modal1"><button>Hello Button</button></button></a>
+
+	<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="titlemodal">
+		<div class="modal-wrapper">
+			<h1 id="titlemodal">Notre titre</h1>
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus veniam iste laborum! Obcaecati quod labore debitis necessitatibus neque, delectus, inventore fugiat saepe adipisci impedit ipsum voluptatibus, fugit facere enim natus sint repudiandae corrupti similique placeat. Iusto, mollitia dolore! Ipsa, in temporibus accusamus qui sint eaque sed perspiciatis, cum rem quidem iure illum repellendus perferendis aut consequuntur dolorem enim numquam corporis recusandae consectetur consequatur blanditiis quos ex ea. Pariatur ad illo, eaque sint quod saepe laboriosam a, repellat necessitatibus dolorem sequi, incidunt corrupti. Aliquam, facilis, doloribus sapiente obcaecati omnis qui pariatur delectus veritatis ullam amet quo repellat eveniet excepturi nostrum eos!
 		</div>
-	</div> -->
+	</aside>
 	
-	<script type="text/javascript" src="../static/js/fetch.js"></script>
+	<script src="../static/js/fetch.js"></script>
 </body>
 </html>

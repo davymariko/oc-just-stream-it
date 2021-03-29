@@ -74,6 +74,7 @@ const getmoviedata = (movieid, istopmovie) => {
 }
 
 
+// fonction qui sélectionne le film le plus coté
 const handletopmovie = (result) => {
   result.then(data => {
     getmoviedata(data.results[0].id, true);
@@ -85,9 +86,9 @@ const handletopmovie = (result) => {
 const rendertopmovie = (result) => {
   const bestmovie = document.getElementById("bestmovie");
   const topmovie = document.getElementById("top-movie-info");
-  let movieInfo = `<h2>${result.title}</h2><br>
-  <h2>Button and Infos</h2><br>
-  <h3>${result.description}</h3><br>`;
+  let movieInfo = `<h2>${result.title}</h2>
+  <p>${result.description}</p><br>
+  <button>More info</button>`;
 
   topmovie.insertAdjacentHTML('afterbegin', movieInfo);
   bestmovie.insertAdjacentHTML('afterbegin', `<img src="${result.image_url}" alt="Movie"/>`);
