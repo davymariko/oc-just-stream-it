@@ -20,6 +20,8 @@ var scrollAmount = {
   ".box-drama" : 0
 };
 
+
+// fonction qui requete tous les données nécessaires pour notre site
 const getAllData = (url) => {
   let genreUrl= "";
   let finalUrl = "";
