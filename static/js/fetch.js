@@ -1,8 +1,26 @@
+// genres name and order
 var genres = ["Action", "Comedy", "Drama"];
-var index = 0;
+var genreorder = {
+  0: "highrate",
+  1: "highrate",
+  2: "action",
+  3: "action",
+  4: "comedy",
+  5: "comedy",
+  6: "drama",
+  7: "drama"
+}
 
-function getAllData(){
-  let url = "http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score";
+// Scroll Functionality
+var scrollPerClick = 250;
+var scrollAmount = {
+  ".box-top" : 0,
+  ".box-action" : 0,
+  ".box-comedy" : 0,
+  ".box-drama" : 0
+};
+
+const getAllData = (url) => {
   let genreUrl= "";
   let finalUrl = "";
   let promises = [];
@@ -25,7 +43,11 @@ function getAllData(){
   Promise.all(promises)
   .then( (response) => {
     for(let j = 0; j < response.length; j++){
-        renderHtml(response[j].json(), j);
+      if (j === 0) {
+        handletopmovie(response[j].json(), true);
+      } else {
+        renderHtml(response[j].json(), j-1);
+      }
     }
   })
   .catch((error) => {
@@ -34,93 +56,69 @@ function getAllData(){
 }
 
 
-let getmoviedata = (movieid) => {
+// fonction qui requete toutes les informations sur un film depuis son id
+const getmoviedata = (movieid, istopmovie) => {
   fetch(`http://127.0.0.1:8000/api/v1/titles/${movieid}`)
   .then(response => {
       return response.json();
   })
   .then( data => {
+    if (istopmovie){
+      rendertopmovie(data);
+    } else {
       console.log(data);
+    }
   });
 }
 
 
-let handledata = (result) => {
-  var moviesbygenre = [];
-
+const handletopmovie = (result) => {
   result.then(data => {
-      console.log(data);
-      for( let i = 0; i < data.length; i++){
-        if ( i % 2 === 0){
-            moviesbygenre = [];
-        }
-        moviesbygenre.push(data[i].json());
-        if (i+1 % 2 === 0) {
-            renderHtml(moviesbygenre, i);
-        }
-      }
-      console.log(moviesbygenre);
+    getmoviedata(data.results[0].id, true);
   })
 }
 
-let  renderHtml =  (result, genreid) => {
+
+// fonction qui affiche le film le plus coté
+const rendertopmovie = (result) => {
+  const bestmovie = document.getElementById("bestmovie");
+  const topmovie = document.getElementById("top-movie-info");
+  let movieInfo = `<h2>${result.title}</h2><br>
+  <h2>Button and Infos</h2><br>
+  <h3>${result.description}</h3><br>`;
+
+  topmovie.insertAdjacentHTML('afterbegin', movieInfo);
+  bestmovie.insertAdjacentHTML('afterbegin', `<img src="${result.image_url}" alt="Movie"/>`);
+}
+
+
+// fonction qui affiche tous les films des différentes catégories
+const renderHtml =  (result, genreid) => {
   let htmlString = "";
-
   result.then(data => {
-    if (genreid === 0 ){
-      const bestmovie = document.getElementById("bestmovie");
-      const topmovie = document.getElementById("top-movie-info");
-      let movieInfo = `<h2>${data.results[0].title}</h2><br>
-      <h2>Button and Infos</h2><br>
-      <h3>${data.results[0].description}</h3><br>`;
-
-      topmovie.insertAdjacentHTML('afterbegin', movieInfo);
-      bestmovie.insertAdjacentHTML('afterbegin', `<img src="${data.results[0].image_url}" alt="Movie"/>`);
-    }else{
-      for (let k = 0; k < data.results.length; k++) {
-          htmlString += `<div class="item"><img class="img-${index}" src="${data.results[k].image_url}" alt="Movie"/></div>`;
-          index++;
-      }
-      if (genreid === 1 || genreid === 2) {
-          const highrate = document.getElementById("highrate");
-          
-          highrate.insertAdjacentHTML('beforeend', htmlString);
-      }else if (genreid === 3 || genreid === 4) {
-          const action = document.getElementById("action");
-  
-          action.insertAdjacentHTML('beforeend', htmlString);
-      }else if (genreid === 5 || genreid === 6) {
-          const comedy = document.getElementById("comedy");
-  
-          comedy.insertAdjacentHTML('beforeend', htmlString);
-      }else {
-          const drama = document.getElementById("drama");
-  
-          drama.insertAdjacentHTML('beforeend', htmlString);
-      }
+    if (genreid % 2 != 0) {
+      data.results = data.results.slice(0, 2);
     }
+    for (let k = 0; k < data.results.length; k++) {
+        htmlString += `<div class="item"><img id=${data.results[k].id} src="${data.results[k].image_url}" alt="Movie"/></div>`;
+    }
+    const element = document.getElementById(genreorder[genreid]);
+    element.insertAdjacentHTML('beforeend', htmlString);
   })
 }
 
-getAllData();
-getmoviedata(499549);
+
+// lancer le script
+getAllData("http://127.0.0.1:8000/api/v1/titles/?sort_by=-imdb_score");
 
 
-var scrollPerClick = 250;
-// Scroll Functionality
-var scrollAmount = {
-  ".box-top" : 0,
-  ".box-action" : 0,
-  ".box-comedy" : 0,
-  ".box-drama" : 0
-};
-
-function sliderScrollLeft(genre) {
+// fonction pour défiler les images des films par genre à gauche
+const sliderScrollLeft = (genre) => {
   let sliders = document.querySelector(genre);
   sliders.scrollTo({
     top: 0,
     left: (scrollAmount[genre] -= scrollPerClick),
-    behavior: "smooth",
+    behavior: "smooth"
   });
 
   if (scrollAmount < 0) {
@@ -128,13 +126,15 @@ function sliderScrollLeft(genre) {
   }
 }
 
-function sliderScrollRight(genre) {
+
+// fonction pour défiler les images des films oar genre à droite
+const sliderScrollRight = (genre) => {
   let sliders = document.querySelector(genre);
   if (scrollAmount[genre] <= sliders.scrollWidth - sliders.clientWidth) {
     sliders.scrollTo({
       top: 0,
       left: (scrollAmount[genre] += scrollPerClick),
-      behavior: "smooth",
+      behavior: "smooth"
     });
   }
 }

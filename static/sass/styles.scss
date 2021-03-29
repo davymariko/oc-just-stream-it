@@ -15,27 +15,6 @@ html {
 // display: flex;
 // justify-content: center;
 
-.bestmovie {
-  width: 100%;
-
-  img {
-    top: 0;
-    height: 60vh;
-    padding-left: 30%;
-    padding-top: 1%;
-    width: 30%;
-  }
-  .movie-info {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: small;
-    color: white;
-    display: inline;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-}
-
 .top-bar {
   text-align: center;
   padding-right: 500px;
@@ -79,6 +58,27 @@ html {
         color: black;
       }
     }
+  }
+}
+
+.bestmovie {
+  width: 100%;
+
+  img {
+    top: 0;
+    height: 60vh;
+    padding-left: 30%;
+    padding-top: 1%;
+    width: 30%;
+  }
+  .movie-info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: white;
+    display: inline;
+    position: absolute;
+    left: 10px;
+    width: 500px;
   }
 }
 
@@ -208,9 +208,4 @@ html {
       transition: $duration all;
     }
   }
-}
-
-
-.this {
-  width: 50%;
 }
