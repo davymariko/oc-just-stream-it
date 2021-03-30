@@ -64,6 +64,9 @@ html {
   padding-left: 30%;
   padding-top: 1%;
   width: 30%;
+  max-width: 100vh;
+  max-width: calc(100vh - 20px);
+  max-height: calc(100vh - 20px);
 }
 .bestmovie .movie-info {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -74,6 +77,8 @@ html {
   left: 20px;
   top: 100px;
   width: 400px;
+  max-width: calc(100vh - 20px);
+  max-height: calc(100vh - 20px);
 }
 .bestmovie .movie-info p {
   font-size: 1.2em;
@@ -140,6 +145,8 @@ html {
   right: 0;
 }
 .wrapper .wrapperbox img {
+  min-width: 100px;
+  max-width: 300px;
   height: 200px;
   width: 200px;
   display: inline-block;
@@ -155,16 +162,30 @@ html {
 }
 
 .modal {
-  color: white;
+  display: none;
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 .modal .modal-wrapper {
-  background-color: #fff;
+  overflow: auto;
+  width: 800px;
+  height: 80%;
+  max-width: calc(100vh - 20px);
+  max-height: calc(100vh - 20px);
+  padding: 20px;
+  background-color: black;
+}
+.modal .modal-wrapper img {
+  top: 0;
+  right: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
