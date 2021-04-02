@@ -14,17 +14,22 @@ html {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .top-bar {
   text-align: center;
-  padding-right: 500px;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
   .menu-bar {
     border-radius: 25px;
     height: fit-content;
     display: inline-flex;
-    background-color: rgba(0, 0, 0, .4);
     align-items: center;
+    justify-content: center;
     padding: 0 10px;
-    position: fixed;
     li {
       list-style: none;
       color: white;
@@ -60,6 +65,7 @@ html {
 
 .bestmovie {
   width: 100%;
+  top: 2;
 
   img {
     top: 0;
@@ -173,7 +179,6 @@ html {
 }
 
 .modal {
-  display: none;
   position: fixed;
   display: flex;
   align-items: center;
@@ -192,11 +197,17 @@ html {
     max-width: calc(100vh - 20px);
     max-height: calc(100vh - 20px);
     padding: 20px;
-    background-color: black;
+    background-color: rgb(37, 37, 37);
 
-    img {
-      top: 0;
-      right: 0;
+    .modal-description {
+      img {
+        float: right;
+        width: 30%;
+      }
     }
   }
+}
+
+.hidden {
+  display: none;
 }

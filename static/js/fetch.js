@@ -68,7 +68,7 @@ const getmoviedata = (movieid, istopmovie) => {
     if (istopmovie){
       rendertopmovie(data);
     } else {
-      console.log(data);
+      renderModal(data);
     }
   });
 }
@@ -88,7 +88,7 @@ const rendertopmovie = (result) => {
   const topmovie = document.getElementById("top-movie-info");
   let movieInfo = `<h2>${result.title}</h2>
   <p>${result.description}</p><br>
-  <button>More info</button>`;
+  <button href="#modalwindow" class="movielink" onclick="loadModal(Number(${result.id}))">More info</button>`;
 
   topmovie.insertAdjacentHTML('afterbegin', movieInfo);
   bestmovie.insertAdjacentHTML('afterbegin', `<img src="${result.image_url}" alt="Movie"/>`);
@@ -103,11 +103,42 @@ const renderHtml =  (result, genreid) => {
       data.results = data.results.slice(0, 2);
     }
     for (let k = 0; k < data.results.length; k++) {
-        htmlString += `<div class="item"><img id=${data.results[k].id} src="${data.results[k].image_url}" alt="Movie"/></div>`;
+        htmlString += `<div class="item"><img href="#modalwindow" onclick="loadModal(Number(${data.results[k].id}))" src="${data.results[k].image_url}" alt="${data.results[k].title}"/></div>`;
     }
     const element = document.getElementById(genreorder[genreid]);
     element.insertAdjacentHTML('beforeend', htmlString);
   })
+}
+
+
+// fonction pour afficher dans le html la déscription des films dans la fenetre modale
+const renderModal = (movieData) => {
+  let htmlString = `
+  <button class="js-close-modal">Close</button>
+  <div class="modal-description">
+    <img src="${movieData.image_url}">
+    <h1 id="titlemodal">${movieData.title}</h1>
+    <p>Genre: ${movieData.genres}</p>
+    <p>Date de sortie: ${movieData.date_published}</p>
+    <p>Rated: ${movieData.rated}</p>
+    <p>Score IMDB: ${movieData.imdb_score}</p>
+    <p>Réalisateurs: ${movieData.directors}</p>
+    <p>Acteurs: ${movieData.actors}</p>
+    <p>Durée: ${movieData.duration}min</p>
+    <p>Pays: ${movieData.countries}</p>
+    <p>Box office: ${movieData.worldwide_gross_income}</p>
+    <p> Descripton: ${movieData.long_description}</p>
+	</div>`
+
+  const element = document.getElementById("modal-wrapper");
+  element.insertAdjacentHTML('beforeend', htmlString);
+}
+
+
+// fonction pour lancer la fenetre modal
+const loadModal = (movieId) => {
+  getmoviedata(movieId, false);
+  openModal("#modalwindow");
 }
 
 
@@ -141,3 +172,39 @@ const sliderScrollRight = (genre) => {
     });
   }
 }
+
+
+// fonction pour ouvrir les fênetres modales
+let modal = null
+
+const openModal = function (myEvent) {
+  let element = document.getElementById("modalwindow");
+  element.classList.remove("hidden");
+  const target = document.querySelector(myEvent);
+  target.removeAttribute('aria-hidden');
+  target.setAttribute('aria-modal', 'true');
+  modal = target;
+  modal.addEventListener('click', closeModal);
+}
+
+const closeModal = function (myEvent) {
+  if (modal === null) return;
+  myEvent.preventDefault();
+  let element = document.getElementById("modalwindow");
+  element.classList.add("hidden");
+  modal.setAttribute('aria-hidden', 'true');
+  modal.removeAttribute('aria-modal');
+  modal.removeEventListener('click', closeModal);
+  modal.querySelector('.js-close-modal').removeEventListener('click', closeModal);
+  modal.querySelector('.js-stop-modal').removeEventListener('click', stopPropagation);
+  document.getElementById("modal-wrapper").innerHTML = "";
+  modal = null;
+}
+
+const stopPropagation = function (myEvent) {
+  myEvent.stopPropagation();
+}
+
+document.querySelectorAll('.movielink').forEach(a => {
+  a.addEventListener('click', openModal);
+})
