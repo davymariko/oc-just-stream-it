@@ -12,8 +12,13 @@ Le design du futur site web devra correspondre à la maquette ci-dessous, qui es
 # Objectif
 Le site doit fonctionner de façon similaire sur les trois navigateurs les plus utilisés actuellement: Chrome, Firefox, Safari; Microsoft Edge a fait des progrès dernièrement donc on va l'inclure.
 
-En ce qui concerne les données nous utiliserons une API maison baptisée [OCMovies-API](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR). Cette dernière n’est pas encore en ligne, mais le développeur qui s’est occupé du développement nous a fourni une version locale pour pouvoir faciliter la réalisation du front-end de notre application. Cette version de test de OCMovies-API se trouve sur le [dépôt de code suivant](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR). L’objectif est de récupérer les données des films depuis l’API à l’aide de requêtes ajax et de les afficher sur une interface web. Il faudra filtrer les données en fonction des critères mentionnées:
+En ce qui concerne les données nous utiliserons une API maison baptisée [OCMovies-API](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR). Cette dernière n’est pas encore en ligne, mais le développeur qui s’est occupé du développement nous a fourni une version locale pour pouvoir faciliter la réalisation du front-end de notre application. Cette version de test de OCMovies-API se trouve sur le [dépôt de code suivant](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR). L’objectif est de récupérer les données des films depuis l’API à l’aide de requêtes ajax et de les afficher sur une interface web. Il faudra filtrer les données en fonction des critères mentionnées. L’interface doit comprendre les zones suivantes : 
 
+- “Meilleur film” : Cette zone affiche la photo du film qui a la meilleur note Imdb toutes catégories confondues, ainsi que son titre, un bouton et le résumé du film sous le bouton.
+- “Films les mieux notés” : Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.
+- “Catégorie 1” : Montre les 7 films les mieux notés d’une catégorie donnée. 
+- “Catégorie 2” : Montre les 7 films les mieux notés d’une autre catégorie.
+- “Catégorie 3” : Idem sur une autre catégorie !
 
 # Environnement
 * L'installation de [Python 3](https://www.python.org/downloads/) est nécessaire pour la réalisation de ce projet
@@ -47,13 +52,24 @@ Pour déployer le site sur votre localhost, lancer le fichier flask
 ```bash
 python -m app.py
 ```
-Vous devrez avoir un lien localhost généré, c'est le lien vers lite
-
-Pour que liste fonctionne correctement, assurez vous que le lien généré de l'API est bien au port 8000, dans le cas contraire modifier la ligne
+Vous devrez avoir un lien localhost généré, c'est le lien vers site.
+Dans mon cas c'est http://127.0.0.1:5000/
 
 
 ![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/flask.JPG)
 
+
+Pour que liste fonctionne correctement, assurez vous que le lien généré de l'API est bien au port 8000, cela veut dire: http://127.0.0.1:8000/. Dans le cas contraire modifier le lien à la ligne 146 dans le fichier fetch.js (static/js/fetch.js): remplacer 127.0.0.1:8000/ par le lien généré lors du lancement du serveur de l'API
+
+![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/fetch.JPG)
+
+Le site devrait ressembler à ceci:
+
+![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/web1.JPG)
+
+![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/web2.JPG)
+
+![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/web3.JPG)
 
 # Auteur
 Le site web a été conçu et est maintenu par [Davy Nimbona](https://www.linkedin.com/in/davy-nimbona/)
