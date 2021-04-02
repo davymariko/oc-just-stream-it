@@ -14,6 +14,8 @@ Le site doit fonctionner de façon similaire sur les trois navigateurs les plus 
 
 En ce qui concerne les données nous utiliserons une API maison baptisée [OCMovies-API](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR). Cette dernière n’est pas encore en ligne, mais le développeur qui s’est occupé du développement nous a fourni une version locale pour pouvoir faciliter la réalisation du front-end de notre application. Cette version de test de OCMovies-API se trouve sur le [dépôt de code suivant](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR). L’objectif est de récupérer les données des films depuis l’API à l’aide de requêtes ajax et de les afficher sur une interface web. Il faudra filtrer les données en fonction des critères mentionnées. L’interface doit comprendre les zones suivantes : 
 
+![alt text](https://user.oc-static.com/upload/2020/09/08/15995704263121_NETFLIX_GRAPHIQUE_FR.png)
+
 - “Meilleur film” : Cette zone affiche la photo du film qui a la meilleur note Imdb toutes catégories confondues, ainsi que son titre, un bouton et le résumé du film sous le bouton.
 - “Films les mieux notés” : Cette zone affiche les 7 autres films les mieux notés toutes catégories confondues. On pourra les faire défiler avec une flèche à gauche et à droite comme sur la maquette pour tous les parcourir.
 - “Catégorie 1” : Montre les 7 films les mieux notés d’une catégorie donnée. 
