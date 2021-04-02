@@ -30,7 +30,7 @@ En ce qui concerne les données nous utiliserons une API maison baptisée [OCMov
 
 # Installation
 1. Cloner, en premier, le projet sur votre bureau ou environnement local
-   - Clicker sur le bouton vert 'Clone' en haut à droite et copier le lien sous HTPPS ou SSH (selon la configuration de votre [git](https://git-scm.com/)
+   - Clicker sur le bouton vert 'Clone' en haut à droite et copier le lien sous HTPPS ou SSH (selon la configuration de votre [git](https://git-scm.com/) )
    - Cloner le project dans un dossier que vous aurez créer exclusivement pour ce projet, en entrant la commande dans le terminal:
     ```bash
     git clone [le lien copié]
@@ -72,6 +72,9 @@ Le site devrait ressembler à ceci:
 ![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/web2.JPG)
 
 ![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/web3.JPG)
+
+
+Bonne navigation
 
 # Auteur
 Le site web a été conçu et est maintenu par [Davy Nimbona](https://www.linkedin.com/in/davy-nimbona/)
