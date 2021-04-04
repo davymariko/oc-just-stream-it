@@ -52,8 +52,14 @@ pip install -r requirements.txt
 # Execution
 Pour déployer le site sur votre localhost, lancer le fichier flask 
 ```bash
-python -m app.py
+python app.py
 ```
+ou
+```bash
+python3 app.py
+```
+dans le cas où y a deux versions python installées (version 2. et version 3.)
+
 Vous devrez avoir un lien localhost généré, c'est le lien vers site.
 Dans mon cas c'est http://127.0.0.1:5000/
 
