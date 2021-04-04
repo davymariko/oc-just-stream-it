@@ -88,7 +88,7 @@ const rendertopmovie = (result) => {
   const topmovie = document.getElementById("top-movie-info");
   let movieInfo = `<h2>${result.title}</h2>
   <p>${result.description}</p><br>
-  <button href="#modalwindow" class="movielink" onclick="loadModal(Number(${result.id}))">More info</button>`;
+  <button href="#modalwindow" onclick="loadModal(Number(${result.id}))">More info</button>`;
 
   topmovie.insertAdjacentHTML('afterbegin', movieInfo);
   bestmovie.insertAdjacentHTML('afterbegin', `<img src="${result.image_url}" alt="Movie"/>`);
@@ -114,7 +114,7 @@ const renderHtml =  (result, genreid) => {
 // fonction pour afficher dans le html la déscription des films dans la fenetre modale
 const renderModal = (movieData) => {
   let htmlString = `
-  <button class="js-close-modal">Close</button>
+  <button class="js-close-modal" onclick='closeModal()'>Close</button>
   <div class="modal-description">
     <img src="${movieData.image_url}">
     <h1 id="titlemodal">${movieData.title}</h1>
@@ -180,22 +180,20 @@ let modal = null
 const openModal = function (myEvent) {
   let element = document.getElementById("modalwindow");
   element.classList.remove("hidden");
-  const target = document.querySelector(myEvent);
-  target.removeAttribute('aria-hidden');
-  target.setAttribute('aria-modal', 'true');
-  modal = target;
+  modal = document.querySelector(myEvent);
+  modal.removeAttribute('aria-hidden');
+  modal.setAttribute('aria-modal', 'true');
   modal.addEventListener('click', closeModal);
+  modal.querySelector('.js-stop-modal').addEventListener('click', stopPropagation);
 }
 
-const closeModal = function (myEvent) {
+const closeModal = function () {
   if (modal === null) return;
-  myEvent.preventDefault();
   let element = document.getElementById("modalwindow");
   element.classList.add("hidden");
   modal.setAttribute('aria-hidden', 'true');
   modal.removeAttribute('aria-modal');
   modal.removeEventListener('click', closeModal);
-  modal.querySelector('.js-close-modal').removeEventListener('click', closeModal);
   modal.querySelector('.js-stop-modal').removeEventListener('click', stopPropagation);
   document.getElementById("modal-wrapper").innerHTML = "";
   modal = null;
@@ -205,6 +203,6 @@ const stopPropagation = function (myEvent) {
   myEvent.stopPropagation();
 }
 
-document.querySelectorAll('.movielink').forEach(a => {
-  a.addEventListener('click', openModal);
-})
+// document.querySelectorAll('.movielink').forEach(a => {
+//   a.addEventListener('click', openModal);
+// })
