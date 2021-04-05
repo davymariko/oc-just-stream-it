@@ -29,7 +29,8 @@ En ce qui concerne les données nous utiliserons une API maison baptisée [OCMov
 * Le programme peut être executé sur Mac et Windows (j'espère sur Linux aussi)
 
 # Installation
-1. Cloner, en premier, le projet sur votre bureau ou environnement local
+1. En premier lieu suivez les étapes d'installation de [OCMovies-API](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR)
+2. Cloner ce projet sur votre bureau ou environnement local
    - Clicker sur le bouton vert 'Clone' en haut à droite et copier le lien sous HTPPS ou SSH (selon la configuration de votre [git](https://git-scm.com/) )
    - Cloner le project dans un dossier que vous aurez créer exclusivement pour ce projet, en entrant la commande dans le terminal:
     ```bash
@@ -44,7 +45,7 @@ En ce qui concerne les données nous utiliserons une API maison baptisée [OCMov
     ```
    Entrer dans le dossier généré
  
-2. Installer les pre-requis pour ce projet en lançant la commande:
+3. Installer les pre-requis pour ce projet en lançant la commande:
 ```bash
 pip install -r requirements.txt
 ```
@@ -67,7 +68,7 @@ Dans mon cas c'est http://127.0.0.1:5000/
 ![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/flask.JPG)
 
 
-Pour que liste fonctionne correctement, assurez vous que le lien généré de l'API est bien au port 8000, cela veut dire: http://127.0.0.1:8000/. Dans le cas contraire modifier le lien à la ligne 146 dans le fichier fetch.js (static/js/fetch.js): remplacer 127.0.0.1:8000/ par le lien généré lors du lancement du serveur de l'API
+Pour que liste fonctionne correctement, assurez vous que le lien généré de l'[API](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR) est bien au port 8000, cela veut dire: http://127.0.0.1:8000/. Dans le cas contraire modifier le lien à la ligne 146 dans le fichier fetch.js (static/js/fetch.js): remplacer 127.0.0.1:8000/ par le lien généré lors du lancement du serveur de l'API
 
 ![alt text](https://github.com/davymariko/oc-just-stream-it/blob/main/assets/fetch.JPG)
 
